@@ -1,5 +1,9 @@
 package cn.xyh.game;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -11,7 +15,20 @@ import javax.swing.JFrame;
  * 
  * */
 public class GameFrame extends JFrame{
-
+	
+	Image ball = CfGameUtil.getImage("images/ball.jpg");
+	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+		g.drawLine(100, 100, 300, 300);
+		g.drawRect(100, 100, 300, 300);
+		g.drawOval(100, 100, 300, 300);
+		g.fillRect(100, 100, 100, 100);
+		g.drawString("kakaka", 650,600);
+		g.setColor(Color.red);
+		g.setFont(new Font("宋体",Font.BOLD,50));
+		g.drawImage(ball, 350, 350, null);
+	}
 	/**
 	 * 初始化窗口
 	 */
